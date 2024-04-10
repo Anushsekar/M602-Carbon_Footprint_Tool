@@ -10,7 +10,8 @@ To use this program you can either install a zip file of then extra (or)
 You can clone using this: https://github.com/Anushsekar/M602-Carbon_Footprint_Tool.git
 
 To install fpdf : 
-pip3 install fpdf
+##
+<tab><tab>code/pip3 install fpdf
 
 To install matplotlib:
 pip3 install matplotlin
