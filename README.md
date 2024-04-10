@@ -3,7 +3,7 @@
 This project is about calculating carbon footprint and give visual and numberical data of the carbon emission produced by an indiviual or business.
 
 
-##INSTALLATION:
+## INSTALLATION:
 
 To use this program you can either install a zip file of then extra (or)
 
