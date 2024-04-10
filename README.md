@@ -11,11 +11,7 @@ You can clone using this:
 ```python
 git clone https://github.com/Anushsekar/M602-Carbon_Footprint_Tool.git
 ```
-To install fpdf : 
+To install requirement : 
 ```python
-pip3 install fpdf
-```
-To install matplotlib:
-```python
-pip3 install matplotlib
+pip install -r requirement.xt
 ```
