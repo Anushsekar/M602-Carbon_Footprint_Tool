@@ -4,6 +4,7 @@ from fpdf import FPDF
 import subprocess
 import Formula as source
 import suggestions as s
+import numpy as np
 
 def create_pdf(entries):
     pdf = FPDF()
@@ -88,7 +89,7 @@ def main():
 
         # Pie chart for business travel and others
         labels_travel = ['Business Travel', 'Other']
-        values_travel = [total_kilometers_traveled_per_year / (average_fuel_efficiency / 100) * 2.31, total_kilometers_traveled_per_year]
+        values_travel = [total_kilometers_traveled_per_year / (average_fuel_efficiency ) * 2.31, total_kilometers_traveled_per_year]
         graph.subplot(2, 2, 3)
         graph.pie(values_travel, labels=labels_travel, autopct='%1.1f%%')
         graph.title('Business Travel')
@@ -110,8 +111,26 @@ def main():
     categories = ['Energy Usage', 'Waste Generation', 'Business Travel']
     total_values = [total_energy_usage, total_waste_generation, total_business_travel]
 
+    x = np.arange(len(categories))
+
+    # Width of each bar
+    bar_width = 0.25
+
+    # Plotting the bars for each category
     graph.figure(figsize=(10, 6))
-    graph.bar(categories, total_values)
+    graph.bar(x, total_values[0], width=bar_width, label=categories[0])
+    graph.bar(x + bar_width, total_values[1], width=bar_width, label=categories[1])
+    graph.bar(x + 2*bar_width, total_values[2], width=bar_width, label=categories[2])
+
+    # Adding labels and legend
+    graph.xlabel('Categories')
+    graph.ylabel('Total Values')
+    graph.title('Total values by category')
+    graph.xticks(x + bar_width, categories)
+    graph.legend()
+
+    # Display the plot
+    graph.tight_layout()    
     graph.xlabel('Categories')
     graph.ylabel('Total Carbon Footprint (metric tons CO2 equivalent)')
     graph.title('Total Carbon Footprint by Category')
@@ -123,14 +142,21 @@ def main():
     entry_waste_generation = [entry[1] for entry in entries]
     entry_business_travel = [entry[2] for entry in entries]
 
+    entry_numbers = np.arange(num_entries)
+
+    # Width of each bar
+    bar_width = 0.25
+
+    # Plotting the bars for each category
     graph.figure(figsize=(10, 6))
-    graph.bar(entry_numbers, entry_energy_usage, label='Energy Usage')
-    graph.bar(entry_numbers, entry_waste_generation, bottom=entry_energy_usage, label='Waste Generation')
-    graph.bar(entry_numbers, entry_business_travel, bottom=[sum(x) for x in zip(entry_energy_usage, entry_waste_generation)], label='Business Travel')
+    graph.bar(entry_numbers, entry_energy_usage, width=bar_width, label='Energy Usage')
+    graph.bar(entry_numbers + bar_width, entry_waste_generation, width=bar_width, label='Waste Generation')
+    graph.bar(entry_numbers + 2*bar_width, entry_business_travel, width=bar_width, label='Business Travel')
     graph.xlabel('Entry')
     graph.ylabel('Total Carbon Footprint (metric tons CO2 equivalent)')
     graph.title('Total Carbon Footprint by Entry')
     graph.legend()
+    graph.tight_layout()
     save_chart(graph, "total_carbon_footprint_by_entry.png")
 
     print("\nAnalysis completed for all entries.")
