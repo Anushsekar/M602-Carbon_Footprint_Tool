@@ -1,7 +1,5 @@
 # M602-Carbon_Footprint_Tool
 
-
-# Carbon Footprint Analyzer
 ## Overview
 Carbon Footprint Analyzer is a Python-based tool that helps individuals and organizations analyze and mitigate their carbon footprints. It calculates carbon emissions associated with energy usage, waste generation, and business travel, providing personalized recommendations for reducing environmental impact.
 
