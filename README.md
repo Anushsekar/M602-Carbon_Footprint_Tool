@@ -28,11 +28,14 @@ pip install -r requirement.xt
 ## Usage
 
 1) Run the main script:
-
-bash
-Copy code
+```python
 python main.py
-
+```
 2) Follow the prompts to input data for each entry.
 
 3) Once all entries are completed, the program will generate a PDF report with analysis and recommendations.
+
+## Acknowledgements
+
+Matplotlib Documentation: https://matplotlib.org/stable/contents.html
+FPDF Documentation: https://pyfpdf.readthedocs.io/en/latest/
