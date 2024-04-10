@@ -37,5 +37,5 @@ python main.py
 
 ## Acknowledgements
 
-Matplotlib Documentation: https://matplotlib.org/stable/contents.html
-FPDF Documentation: https://pyfpdf.readthedocs.io/en/latest/
+* Matplotlib Documentation: https://matplotlib.org/stable/contents.html
+* FPDF Documentation: https://pyfpdf.readthedocs.io/en/latest/
