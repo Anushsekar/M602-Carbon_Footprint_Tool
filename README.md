@@ -17,5 +17,5 @@ pip3 install fpdf
 ```
 To install matplotlib:
 ```python
-pip3 install matplotlin
+pip3 install matplotlib
 ```
