@@ -20,9 +20,9 @@ You can clone using this:
 ```python
 git clone https://github.com/Anushsekar/M602-Carbon_Footprint_Tool.git
 ```
-To install requirement : 
+To install requirement(download the requirement.txt file before installing it) : 
 ```python
-pip install -r requirement.xt
+pip install -r requirement.txt
 ```
 
 ## Usage
