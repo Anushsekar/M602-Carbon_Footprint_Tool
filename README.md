@@ -14,13 +14,13 @@ Carbon Footprint Analyzer is a Python-based tool that helps individuals and orga
 
 ## INSTALLATION:
 
-To use this program you can either install a zip file of then extra (or)
+To use this program you can either install the zip file (or)
 
 You can clone using this: 
 ```python
 git clone https://github.com/Anushsekar/M602-Carbon_Footprint_Tool.git
 ```
-To install requirement(download the requirement.txt file before installing it) : 
+To install requirement (download the requirement.txt file before installing it) : 
 ```python
 pip install -r requirement.txt
 ```
